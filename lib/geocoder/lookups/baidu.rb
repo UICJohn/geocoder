@@ -20,7 +20,7 @@ module Geocoder::Lookup
     private # ---------------------------------------------------------------
 
     def base_query_url(query)
-      "#{protocol}://api.map.baidu.com/geocoder/v2/?"
+      "#{protocol}://api.map.baidu.com/#{query.reverse_geocode? ? 'geocoding' : 'reverse_geocoding'}/v3/?"
     end
 
     def content_key
